@@ -13,6 +13,9 @@
   <a href="mailto:luisfilipemnovais@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
+  <a> 
+    <img src="https://img.shields.io/badge/Linux%20Mint-86BE43.svg?style=for-the-badge&logo=Linux-Mint&logoColor=white" alt="LinuxMint"/>
+  </a>
 </p>
 
 <img src="https://raw.githubusercontent.com/MicaelliMedeiros/micaellimedeiros/master/image/line-1.gif" width="100%">
