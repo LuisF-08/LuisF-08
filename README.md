@@ -50,7 +50,7 @@ Sou um entusiasta de tecnologia e estudante de **Sistemas de Informação** no I
   <img src="https://img.shields.io/badge/Python-3776AB?style=plastic&logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=plastic&logo=powerbi&logoColor=black" alt="Power BI" />
   <img src="https://img.shields.io/badge/SQL-4479A1?style=plastic&logo=postgresql&logoColor=white" alt="SQL" />
-  <img src="https://img.shields.io/badge/n8n-1A1A1A?style=plastic&logo=n8n&logoColor=white" alt="n8n" />
+  <img src="https://img.shields.io/badge/n8n-1A1A1A?style=plastic&logo=n8n&logoColor=red" alt="n8n" />
   <img src="https://img.shields.io/badge/Excel-217346?style=plastic&logo=microsoftexcel&logoColor=white" alt="Excel" />
   <img src="https://img.shields.io/badge/Git-F05032?style=plastic&logo=git&logoColor=white" alt="Git" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=plastic&logo=Docker&logoColor=white" alt="Docker" />
