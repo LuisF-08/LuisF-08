@@ -30,7 +30,7 @@ Sou um entusiasta de tecnologia e estudante de **Sistemas de Informação** no I
 
 ### 🌱 Atualmente Aprendendo
 - **Cloud:** Conceitos de AWS e Google Cloud.
-- **Frameworks:** Explorando Django para desenvolvimento web.
+- **SQL##:** Estudando SQL para Engenharia de Dados.
 - **Data Science:** Aprofundando em bibliotecas como Scikit-Learn e TensorFlow.
 
 <br>
