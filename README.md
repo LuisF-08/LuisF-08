@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=22&pause=1000&color=F7B500&center=true&width=500&lines=Analista+de+Dados+e+Automa%C3%A7%C3%A3o;Desenvolvedor+Backend;Especialista+em+Otimiza%C3%A7%C3%A3o+de+Processos" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=22&pause=1000&color=F7B500&center=true&width=500&lines=Analista+de+Dados+e+Automa%C3%A7%C3%A3o;Desenvolvedor+Backend;Constante+Aprendizado+em+Infraestrutura+de+dados" alt="Typing SVG" />
   </a>
 </p>
 
@@ -29,9 +29,9 @@ Sou um entusiasta de tecnologia e estudante de **Sistemas de Informação** no I
 - 🚀 Focado em criar **dashboards inteligentes** e **workflows automatizados**.
 
 ### 🌱 Atualmente Aprendendo
-- **Cloud:** Conceitos de AWS e Google Cloud.
-- **SQL:** SQL e NoSQL para Engenharia de Dados.
-- **Data Science:** Aprofundando em bibliotecas como Scikit-Learn e TensorFlow.
+- **Cloud:** Conceitos de AWS,Azure e Google Cloud.
+- **Backend em Python:** Participando da capacitação em Backend em Python pelo CEPEDI.
+- **Data Engineer** Estudando conceitos de Engenharia de Dados.
 
 <br>
 
