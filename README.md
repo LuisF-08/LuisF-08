@@ -25,7 +25,7 @@ I work with **data pipelines**, **ETL/ELT**, **system integrations**, **APIs**, 
 ## ⚙️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,nodejs,javascript,java,spring,php&theme=dark" height="55"/>
+  <img src="https://skillicons.dev/icons?i=python,nodejs,fastapi,java,spring,bootstrap&theme=dark" height="55"/>
 </p>
 
 <p align="center">
