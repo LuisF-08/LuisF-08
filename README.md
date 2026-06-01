@@ -17,7 +17,7 @@ I work with **data pipelines**, **ETL/ELT**, **system integrations**, **APIs**, 
 ## 🛠️ Tech Stack & Tools
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,django,fastapi,java,spring,postgres,mysql,mongodb,docker,aws,bootstrap,nodejs&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=python,django,fastapi,java,spring,postgres,mysql,mongodb,docker,aws,bootstrap,vue,tailwindcss,nodejs&theme=dark" />
 </p>
 
 <p align="center">
