@@ -61,7 +61,7 @@ I work with **data pipelines**, **ETL/ELT**, **system integrations**, **APIs**, 
       <h3>🧩 Gerenciador_Tarefas</h3>
       <p>Robust backend system for task management focused on Clean Architecture, efficient CRUD operations, and data persistence.</p>
       <!-- Badges -->
-      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Bootstrap-150458?style=flat-square&logo=bootstrap&logoColor=purple"/>
       <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/>
       <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
       <br><br>
