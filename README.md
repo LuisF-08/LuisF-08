@@ -46,7 +46,7 @@
 | :--- | :--- |
 | **Languages** | <img src="https://skillicons.dev/icons?i=python,java,js&theme=dark" height="30" /> |
 | **Backend & APIs** | <img src="https://skillicons.dev/icons?i=django,fastapi,spring,nodejs&theme=dark" height="30" /> |
-| **Frontend** | <img src="https://skillicons.dev/icons?i=vue,react,tailwind,bootstrap&theme=dark" height="30" /> |
+| **Frontend** | <img src="https://skillicons.dev/icons?i=vue,nextjs,tailwind,bootstrap&theme=dark" height="30" /> |
 | **Databases & Cache** | <img src="https://skillicons.dev/icons?i=postgres,mysql,redis,mongodb&theme=dark" height="30" /> |
 | **Data & Automation** | <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white"/> <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black"/> |
 | **DevOps & Cloud** | <img src="https://skillicons.dev/icons?i=docker,aws&theme=dark" height="30" /> |
@@ -75,12 +75,13 @@
     </td>
     <td width="50%" align="center" valign="top">
       <h3>🛒 MyEcomerce</h3>
-      <p>E-commerce completo com Vue.js/Tailwind e Backend construído em Django REST, SQLite & Redis.</p>
+      <p>E-commerce completo com Vue.js/Tailwind e Backend construído em Django REST, PostgreSQL & Redis.</p>
       <p>
         <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white"/>
         <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/>
         <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
         <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white"/>
+         <img src="https://img.shields.io/badge/PostgreSQL-0F0F0F?style=flat-square&logo=postgresql&logoColor=white"/>
       </p>
       <a href="https://github.com/LuisF-08/MyEcomerce">
         <img src="https://img.shields.io/badge/Repository-F7B500?style=for-the-badge&logo=github&logoColor=black"/>
