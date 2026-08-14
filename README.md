@@ -110,6 +110,22 @@
 
 ---
 
+<div align="center">
+
+## 📊 GitHub Statistics
+
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/LuisF-08/LuisF-08/main/assets/top-langs.svg"
+    height="330"
+    alt="Most Used Languages"
+  />
+</p>
+
+</div>
+
+---
+
 ## 🐍 Contribution Snake
 
 <p align="center">
