@@ -1,1 +1,279 @@
+name: Update Languages Stats
 
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate languages SVG
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python <<'PY'
+          import json
+          import os
+          import urllib.request
+          from collections import defaultdict
+
+          USERNAME = "LuisF-08"
+
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+              "X-GitHub-Api-Version": "2026-03-10",
+              "User-Agent": "github-languages-stats"
+          }
+
+          def github_get(url):
+              request = urllib.request.Request(url, headers=headers)
+
+              with urllib.request.urlopen(request) as response:
+                  return json.loads(response.read().decode())
+
+          # Busca todos os repositórios públicos do usuário
+          repositories = []
+
+          page = 1
+
+          while True:
+              url = (
+                  f"https://api.github.com/users/{USERNAME}/repos"
+                  f"?per_page=100&page={page}&type=owner"
+              )
+
+              data = github_get(url)
+
+              if not data:
+                  break
+
+              repositories.extend(data)
+
+              if len(data) < 100:
+                  break
+
+              page += 1
+
+          # Linguagens que não queremos considerar
+          ignored_languages = {
+              "HTML",
+              "CSS",
+              "Jupyter Notebook"
+          }
+
+          language_bytes = defaultdict(int)
+
+          # Soma os bytes de código de cada linguagem
+          for repository in repositories:
+
+              # Ignora forks
+              if repository.get("fork"):
+                  continue
+
+              repo_name = repository["name"]
+
+              print(f"Analyzing: {repo_name}")
+
+              try:
+                  languages = github_get(
+                      f"https://api.github.com/repos/"
+                      f"{USERNAME}/{repo_name}/languages"
+                  )
+
+                  for language, bytes_count in languages.items():
+
+                      if language not in ignored_languages:
+                          language_bytes[language] += bytes_count
+
+              except Exception as error:
+                  print(
+                      f"Could not analyze {repo_name}: {error}"
+                  )
+
+          # Ordena pelas linguagens mais utilizadas
+          languages = sorted(
+              language_bytes.items(),
+              key=lambda item: item[1],
+              reverse=True
+          )
+
+          # Pega as 6 principais
+          languages = languages[:6]
+
+          if not languages:
+              raise RuntimeError(
+                  "No programming languages were found."
+              )
+
+          total = sum(
+              value for _, value in languages
+          )
+
+          # Cores das linguagens
+          colors = {
+              "Python": "#3572A5",
+              "Java": "#B07219",
+              "JavaScript": "#F1E05A",
+              "TypeScript": "#3178C6",
+              "C": "#555555",
+              "C++": "#F34B7D",
+              "C#": "#178600",
+              "Go": "#00ADD8",
+              "Rust": "#DEA584",
+              "PHP": "#4F5D95",
+              "Ruby": "#701516",
+              "Kotlin": "#A97BFF",
+              "Swift": "#F05138",
+              "Dart": "#00B4AB",
+              "Shell": "#89E051",
+              "SQL": "#DA5B0B"
+          }
+
+          # Dimensões do card
+          width = 500
+          height = 330
+
+          # Começa o SVG
+          svg = f'''<svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="{width}"
+            height="{height}"
+            viewBox="0 0 {width} {height}"
+          >
+
+            <rect
+              width="100%"
+              height="100%"
+              rx="12"
+              fill="#0D1117"
+              stroke="#30363D"
+            />
+
+            <text
+              x="30"
+              y="45"
+              fill="#F7B500"
+              font-family="Arial, sans-serif"
+              font-size="22"
+              font-weight="bold"
+            >
+              Most Used Languages
+            </text>
+          '''
+
+          y = 85
+
+          for language, bytes_count in languages:
+
+              percentage = (
+                  bytes_count / total
+              ) * 100
+
+              color = colors.get(
+                  language,
+                  "#8B949E"
+              )
+
+              # Barra
+              svg += f'''
+                <rect
+                  x="30"
+                  y="{y}"
+                  width="440"
+                  height="12"
+                  rx="6"
+                  fill="#21262D"
+                />
+
+                <rect
+                  x="30"
+                  y="{y}"
+                  width="{440 * percentage / 100}"
+                  height="12"
+                  rx="6"
+                  fill="{color}"
+                />
+              '''
+
+              # Nome da linguagem
+              svg += f'''
+                <text
+                  x="30"
+                  y="{y + 38}"
+                  fill="#FFFFFF"
+                  font-family="Arial, sans-serif"
+                  font-size="15"
+                >
+                  {language}
+                </text>
+              '''
+
+              # Porcentagem
+              svg += f'''
+                <text
+                  x="470"
+                  y="{y + 38}"
+                  text-anchor="end"
+                  fill="#8B949E"
+                  font-family="Arial, sans-serif"
+                  font-size="14"
+                >
+                  {percentage:.1f}%
+                </text>
+              '''
+
+              y += 45
+
+          svg += '''
+          </svg>
+          '''
+
+          # Cria a pasta
+          os.makedirs("assets", exist_ok=True)
+
+          # Salva o SVG
+          with open(
+              "assets/top-langs.svg",
+              "w",
+              encoding="utf-8"
+          ) as file:
+              file.write(svg)
+
+          print("Languages SVG generated successfully.")
+
+          for language, value in languages:
+              percentage = value / total * 100
+
+              print(
+                  f"{language}: "
+                  f"{percentage:.2f}%"
+              )
+
+          PY
+
+      - name: Commit generated SVG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets/top-langs.svg
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update language statistics"
+            git push
+          fi
